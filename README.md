@@ -11,10 +11,10 @@ Building a small newsroom network on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using Vi
 VirtualBox, Windows Server 2025 Eval, Windows 11, Linux Mint, Wireshark, Nmap, PowerShell
 
 ### Labs
-- [ ] Lab 01 - Building LabNet (Isolated Network) - _coming soon_
+- [ ] Lab 01 - [Building the isolated network](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab01%20Network%20setup.md)
 - [ ] Lab 02 - Domain Join & Centralised Logins - _coming soon_
 - [ ] Lab 03 - DHCP break & fix
-- [ ] Lab 04 - Wireshare Capture of a login
+- [ ] Lab 04 - Wireshark Capture of a login
 
 ### What I'm learning
 - Networking: DNS, DHCP, Subnetting
