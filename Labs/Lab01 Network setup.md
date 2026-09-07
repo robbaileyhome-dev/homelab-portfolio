@@ -5,14 +5,14 @@ To plan and deploy a secure, completely isolated sandbox environment inside Virt
 
 ## Network Architecture
 ```text
-                  [ VirtualBox NAT / Host-Only Network ]
+                       [ VirtualBox NAT / Host-Only Network ]
                              The Old Millington Gazette
                             Subnet range: 192.168.0.0/24
                                          |
-        +--------------------------------+--------------------------------+
+        +--------------------------------------+---------------------------------+
 
-        |                                |                                |
-        v                                v                                v
+        |                                      |                                 |
+        v                                      v                                 v
 +------------------------------+ +------------------------------+ +------------------------------+
 
 |  Windows Server 2025         | |  Windows 11 Client           | |  Linux Mint Client           |
