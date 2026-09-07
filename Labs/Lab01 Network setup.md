@@ -13,7 +13,6 @@ To plan and deploy a secure, completely isolated sandbox environment inside Virt
            |                                |                                |
            v                                v                                v
 +------------------------------+ +------------------------------+ +------------------------------+
-
 |  Windows Server 2025         | |  Windows 11 Client           | |  Linux Mint Client           |
 |  NEWSRV01                    | |  Reporter                    | |  itadmin                     |
 |  Role: Domain / DHCP / DNS   | |  Role: Newsroom WS           | |  Role: SysAdmin/Mgmt         |
