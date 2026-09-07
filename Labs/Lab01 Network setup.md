@@ -1,4 +1,4 @@
-# Lab 1: Isolated Virtual Newsroom Network Infrastructure
+# Lab01: Isolated Virtual Newsroom Network Infrastructure
 
 ## Objective
 To plan and deploy a secure, completely isolated sandbox environment inside VirtualBox to serve as the baseline infrastructure for my virtual newsroom. All VMS are running on a GEEKOM A8 Ryzen 7 8745HS, 16GB.
