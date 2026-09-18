@@ -53,5 +53,5 @@ ping: connect: Network is unreachable
 * **Analysis:** The `Network is unreachable` error explicitly confirms that the VM has no routing path out of the VirtualBox private switch, proving absolute network isolation from the host LAN.
 
 ### Verification 3: VirtualBox Configuration Overview
-<img width="1298" height="813" alt="Image" src="https://github.com/user-attachments/assets/c565bcc9-bbdb-4f91-abb1-857ef911e150" />
-*Figure: Screenshot highlighting the internal/host-only switch assignment bindings applied to all three instances.*
+<img width="1011" height="917" alt="Image" src="https://github.com/user-attachments/assets/b5fea189-3545-4990-b6a7-5ea351fde050" />
+*Figure: Screenshot of VirtualBox configuration for Ubuntu Server newssrvr01 and Linux Mint client it-admin01*
