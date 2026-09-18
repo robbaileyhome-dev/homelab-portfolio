@@ -1,4 +1,4 @@
-# Lab01: Isolated Virtual Newsroom Network Infrastructure
+# Lab01: Isolated virtual newsroom network infrastructure
 
 ## Objective
 Start to build a secure, completely isolated sandbox network environment inside VirtualBox. The first step is a server and an admin client configured with static IP addresses. Both are running in VirtualBox on a GEEKOM A8 Ryzen 7 8745HS, 16GB.
@@ -28,7 +28,7 @@ Start to build a secure, completely isolated sandbox network environment inside 
 
 ## Evidence of connectivity & isolation
 
-### Verification 1: Internal Inter-VM Connectivity
+### Verification 1: Internal inter-VM connectivity
 Proving the Linux Mint client it-admin01 can communicate with newssrvr01.
 
 ```bash
@@ -43,7 +43,7 @@ PING 192.168.0.10 (192.168.0.10) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 2197ms
 ```
 
-### Verification 2: Strict Network Isolation Proof (LAN Boundary Check)
+### Verification 2: Strict network isolation
 To prove the virtual newsroom cannot leak malicious traffic into the home network, a cross-boundary ping was attempted from it-admin01 to the physical host's home router gateway (`192.168.1.254`).
 
 ```bash
@@ -52,6 +52,6 @@ ping: connect: Network is unreachable
 ```
 * **Analysis:** The `Network is unreachable` error explicitly confirms that the VM has no routing path out of the VirtualBox private switch, proving absolute network isolation from the host LAN.
 
-### Verification 3: VirtualBox Configuration Overview
+### Verification 3: VirtualBox configuration overview
 <img width="1011" height="917" alt="Image" src="https://github.com/user-attachments/assets/b5fea189-3545-4990-b6a7-5ea351fde050" />
 *Figure: Screenshot of VirtualBox configuration for Ubuntu Server newssrvr01 and Linux Mint client it-admin01*
