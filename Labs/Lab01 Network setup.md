@@ -28,6 +28,16 @@ Start to build a secure, completely isolated sandbox network environment inside 
 
 ## Evidence of connectivity & isolation
 
+### Troubleshooting
+After setting up newssrvr01 with a static IP address I attempted to ping the virtual network adapter (192.168.0.1) to prove connectivity. The ping failed.
+Diagnostic tools used were [ip a] and [ip route] to ensure the correct IP configurations were in place and checking VirtualBox settings to ensure the correct host-only adapter was configured on the server. I then checked the Windows host to ensure its firewall settings were not blocking ICMP traffic. In PowerShell I used [Get-NetAdapter] to check the adapter was up and [Get-NetConnectionProfile] to check whether it was using the public profile. This was confirmed to be the issue.
+
+I used the following command to allow ICMP traffic and successfully ping the adapter:
+
+```powershell
+New-NetFirewallRule -DisplayName "Allow ICMP from Host-Only Lab" -Protocol ICMPv4 -IcmpType 8 -RemoteAddress 192.168.0.0/24 -Action Allow -Profile Any
+```
+
 ### Verification 1: Internal inter-VM connectivity
 Proving the Linux Mint client it-admin01 can communicate with newssrvr01.
 
