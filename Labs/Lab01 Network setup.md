@@ -13,14 +13,13 @@ To plan a secure, completely isolated sandbox network environment inside Virtual
                            |     Gateway, Domain, DHCP, DNS     |
                            +------------------------------------+
                                                |
-        +--------------------------------------+---------------------------------+
-
-        |                                      |                                 |
-        v                                      v                                 v
+           +-----------------------+----------------------+-----------------------+
+           |                       |                      |                       |
+           v                       v                      v                       v
 +---------------------+ +---------------------+ +---------------------+ +---------------------+
 |  Linux client       | |  Linux client       | |  Linux client       | |  Linux client       |
-|  Editor             | |  Reporter           | |  IT admin           | |  Sales              |
-|  1GB, 1 core        | |  1GB, 1 core        | |  1GB, 1 core        | |  1GB, 1 core        |
+|  editor-01          | |  reporter-01        | |  it-admin-01        | |  sales-01           |
+|  1GB, 1 core        | |  1GB, 1 core        | |  2GB, 1 core        | |  1GB, 1 core        |
 |  IP: 192.168.0.100  | |  IP: 192.168.0.101  | |  IP: 192.168.0.10   | |  IP: 192.168.1.100  |
 +---------------------+ +---------------------+ +---------------------+ +---------------------+
 ```
