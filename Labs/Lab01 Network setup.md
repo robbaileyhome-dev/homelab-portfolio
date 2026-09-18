@@ -11,6 +11,7 @@ To plan a secure, completely isolated sandbox network environment inside Virtual
                            +------------------------------------+
                            |           Ubuntu server            |
                            |     Gateway, Domain, DHCP, DNS     |
+                           |          IP: 192.168.0.10          |
                            +------------------------------------+
                                                |
            +-----------------------+----------------------+-----------------------+
@@ -20,7 +21,7 @@ To plan a secure, completely isolated sandbox network environment inside Virtual
 |  Linux client       | |  Linux client       | |  Linux client       | |  Linux client       |
 |  editor-01          | |  reporter-01        | |  it-admin-01        | |  sales-01           |
 |  1GB, 1 core        | |  1GB, 1 core        | |  2GB, 1 core        | |  1GB, 1 core        |
-|  IP: 192.168.0.100  | |  IP: 192.168.0.101  | |  IP: 192.168.0.10   | |  IP: 192.168.1.100  |
+|  IP: 192.168.0.150  | |  IP: 192.168.0.151  | |  IP: 192.168.0.101  | |  IP: 192.168.0.200  |
 +---------------------+ +---------------------+ +---------------------+ +---------------------+
 ```
 
