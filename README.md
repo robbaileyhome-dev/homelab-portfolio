@@ -1,20 +1,44 @@
 # homelab-portfolio
-Virtual newsroom lab - building AD, DNS, DHCP and security labs for Network+ / Security+
+I am a journalist and senior lecturer retraining in IT / Cyber / AI.
 
-Ex-journalist and senior lecturer retraining in IT / Cyber / AI.
-Building a small newsroom network on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using VirtualBox.
+I am building a virtual newsroom lab for the *Old Millington Gazette* with AD, DNS and DHCP for Network+ and Security+
+
+The isolated, self-contained network will be built with VMs on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using VirtualBox.
 
 **Focus:** CompTIA Network+, Security+ and AWS Certified AI Practitioner
-**Core Lab:** 3-VM isolated network
+
+## Network topology blueprint
+```text
+                           [ VirtualBox NAT / Host-Only Network ]
+                                 The Old Millington Gazette
+                                Subnet range: 192.168.0.0/24
+                           +------------------------------------+
+                           |           Ubuntu server            |
+                           |     Gateway, Domain, DHCP, DNS     |
+                           +------------------------------------+
+                                               |
+           +-----------------------+----------------------+-----------------------+
+           |                       |                      |                       |
+           v                       v                      v                       v
++---------------------+ +---------------------+ +---------------------+ +---------------------+
+|  Linux client       | |  Linux client       | |  Linux client       | |  Linux client       |
+|  editor-01          | |  reporter-01        | |  it-admin-01        | |  sales-01           |
+|  1GB, 1 core        | |  1GB, 1 core        | |  2GB, 1 core        | |  1GB, 1 core        |
+|  IP: 192.168.0.100  | |  IP: 192.168.0.101  | |  IP: 192.168.0.10   | |  IP: 192.168.1.100  |
++---------------------+ +---------------------+ +---------------------+ +---------------------+
+```
 
 ### Tools
-VirtualBox, Windows Server 2025 Eval, Windows 11, Linux Mint, Wireshark, Nmap, PowerShell
+VirtualBox, Ubuntu Server, Linux Mint, Debian
 
 ### Labs
-- [ ] Lab 01 - [Building the isolated network](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab01%20Network%20setup.md)
-- [ ] Lab 02 - Domain Join & Centralised Logins - _coming soon_
-- [ ] Lab 03 - DHCP break & fix
-- [ ] Lab 04 - Wireshark Capture of a login
+- [ ] Lab 01 - Two nodes, static IPs - OSI Layers 1-3 - to come
+- [ ] Lab 02 - DHCP and DNS
+- [ ] Lab 03 - Segmentation - VLANs
+- [ ] Lab 04 - Directory services - authentication
+- [ ] Lab 05 - File / print - shared resources
+- [ ] Lab 06 - Network monitoring
+- [ ] Lab 07 - Troubleshooting
 
 ### What I'm learning
 - Networking: DNS, DHCP, Subnetting
