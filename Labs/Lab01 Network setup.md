@@ -1,55 +1,53 @@
 # Lab01: Isolated Virtual Newsroom Network Infrastructure
 
 ## Objective
-To plan a secure, completely isolated sandbox network environment inside VirtualBox. This will be my  All VMS will run on a GEEKOM A8 Ryzen 7 8745HS, 16GB.
+Start to build a secure, completely isolated sandbox network environment inside VirtualBox. The first step is a server and an admin client configured with static IP addresses. Both are running in VirtualBox on a GEEKOM A8 Ryzen 7 8745HS, 16GB.
 
-## Network Architecture
+## Blueprint
 ```text
-                           [ VirtualBox NAT / Host-Only Network ]
+                              [ VirtualBox Host-Only Network ]
                                  The Old Millington Gazette
                                 Subnet range: 192.168.0.0/24
                            +------------------------------------+
                            |           Ubuntu server            |
+                           |             newssrvr01             |
                            |     Gateway, Domain, DHCP, DNS     |
                            |          IP: 192.168.0.10          |
                            +------------------------------------+
                                                |
-           +-----------------------+----------------------+-----------------------+
-           |                       |                      |                       |
-           v                       v                      v                       v
-+---------------------+ +---------------------+ +---------------------+ +---------------------+
-|  Linux client       | |  Linux client       | |  Linux client       | |  Linux client       |
-|  editor-01          | |  reporter-01        | |  it-admin-01        | |  sales-01           |
-|  1GB, 1 core        | |  1GB, 1 core        | |  2GB, 1 core        | |  1GB, 1 core        |
-|  IP: 192.168.0.150  | |  IP: 192.168.0.151  | |  IP: 192.168.0.101  | |  IP: 192.168.0.200  |
-+---------------------+ +---------------------+ +---------------------+ +---------------------+
+                                               v 
+                                    +---------------------+
+                                    |  Linux Mint client  |
+                                    |  it-admin01        |
+                                    |  2GB, 2 cores       |
+                                    |  IP: 192.168.0.101  |
+                                    +---------------------+
 ```
 
 ---
 
-## Evidence of Isolation & Connectivity
+## Evidence of connectivity & isolation
 
 ### Verification 1: Internal Inter-VM Connectivity
-Proving the Windows 11 client can successfully talk to the Linux Mint client over the private switch.
+Proving the Linux Mint client it-admin01 can communicate with newssrvr01.
 
-```cmd
-C:\Users\Reporter> ping 192.168.0.101
+```bash
+it-admin01@itadmin01> ping -c 3 192.168.0.10
 
-Pinging 192.168.0.101 with 32 bytes of data:
-Reply from 192.168.0.101: bytes=32 time=1ms TTL=64
-Reply from 192.168.0.101: bytes=32 time<1ms TTL=64
-Reply from 192.168.0.101: bytes=32 time=1ms TTL=64
-Reply from 192.168.0.101: bytes=32 time<1ms TTL=64
+PING 192.168.0.10 (192.168.0.10) 56(84) bytes of data.
+64 bytes from 192.168.0.10: icmp_seq=1 ttl=64 time=2.10 ms
+64 bytes from 192.168.0.10: icmp_seq=2 ttl=64 time=0.799 ms
+64 bytes from 192.168.0.10: icmp-seq=3 ttl=64 time=1.15 ms
 
-Ping statistics for 192.168.0.101:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
+--- 192.168.0.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2197ms
 ```
 
 ### Verification 2: Strict Network Isolation Proof (LAN Boundary Check)
-To prove the virtual newsroom cannot leak malicious traffic into the physical production home network, a cross-boundary ping was attempted from the Linux Admin VM (`192.168.0.101`) to the physical host's home router gateway (`192.168.1.254`).
+To prove the virtual newsroom cannot leak malicious traffic into the home network, a cross-boundary ping was attempted from it-admin01 to the physical host's home router gateway (`192.168.1.254`).
 
 ```bash
-itadmin@rob-VirtualBox:~\$ ping -c 3 192.168.1.254
+it-admin01@itadmin01> ping -c 3 192.168.1.254
 ping: connect: Network is unreachable
 ```
 * **Analysis:** The `Network is unreachable` error explicitly confirms that the VM has no routing path out of the VirtualBox private switch, proving absolute network isolation from the host LAN.
