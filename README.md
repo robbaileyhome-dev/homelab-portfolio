@@ -43,7 +43,7 @@ VirtualBox, Ubuntu Server, Linux Mint, Debian
 
 ### What I'm learning
 - Networking: DNS, DHCP, subnetting
-- Security: Domains, ahthentication, group policy, network monitoring
+- Security: Domains, authentication, group policy, network monitoring
 - Documentation: Break/fix troubleshooting
 
 Connect on LinkedIn: https://www.linkedin.com/in/rob-j-bailey-/
