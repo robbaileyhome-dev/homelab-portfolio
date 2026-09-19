@@ -42,8 +42,8 @@ VirtualBox, Ubuntu Server, Linux Mint, Debian
 - [ ] Lab 07 - Troubleshooting
 
 ### What I'm learning
-- Networking: DNS, DHCP, Subnetting
-- Security: AD, Group Policy, Windows Event Logs
+- Networking: DNS, DHCP, subnetting
+- Security: Domains, ahthentication, group policy, network monitoring
 - Documentation: Break/fix troubleshooting
 
 Connect on LinkedIn: https://www.linkedin.com/in/rob-j-bailey-/
