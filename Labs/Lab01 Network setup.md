@@ -1,27 +1,27 @@
-# Lab01: Isolated virtual newsroom network infrastructure
+# Lab01: Setting up the network infrastructure
 
 ## Objective
-Start to build a secure, completely isolated sandbox network environment inside VirtualBox. The first step is a server and an admin client configured with static IP addresses. Both are running in VirtualBox on a GEEKOM A8 Ryzen 7 8745HS, 16GB.
+This lab is the start of a series in which I will built a secure, isolated sandbox network simulating a typical small digital newsroom. In this lab I will configure a host-only network in VirtualBox, starting with a server and a Linux client with static IP addresses. I will demonstrate that the devices can ping each other and that they are isolated from my home network.
 
 ## Blueprint
 ```text
-                              [ VirtualBox Host-Only Network ]
-                                 The Old Millington Gazette
-                                Subnet range: 192.168.0.0/24
-                           +------------------------------------+
-                           |           Ubuntu server            |
-                           |             newssrvr01             |
-                           |     Gateway, Domain, DHCP, DNS     |
-                           |          IP: 192.168.0.10          |
-                           +------------------------------------+
-                                               |
-                                               v 
-                                    +---------------------+
-                                    |  Linux Mint client  |
-                                    |  it-admin01        |
-                                    |  2GB, 2 cores       |
-                                    |  IP: 192.168.0.101  |
-                                    +---------------------+
+   [ VirtualBox Host-Only Network ]
+      The Old Millington Gazette
+     Subnet range: 192.168.0.0/24
++------------------------------------+
+|           Ubuntu server            |
+|             newssrvr01             |
+|     Gateway, Domain, DHCP, DNS     |
+|          IP: 192.168.0.10          |
++------------------------------------+
+                   |
+                   v 
+        +---------------------+
+        |  Linux Mint client  |
+        |  it-admin01         |
+        |  2GB, 2 cores       |
+        |  IP: 192.168.0.101  |
+        +---------------------+
 ```
 
 ---
@@ -30,7 +30,7 @@ Start to build a secure, completely isolated sandbox network environment inside 
 
 ### Troubleshooting
 After setting up newssrvr01 with a static IP address I attempted to ping the virtual network adapter (192.168.0.1) to prove connectivity. The ping failed.
-I used diagnostic tools **ip a** and **ip route** to ensure the correct IP configurations were in place and checked VirtualBox settings to ensure the correct host-only adapter was configured on the server. I then checked the Windows host to ensure its firewall settings were not blocking ICMP traffic. In PowerShell I used **Get-NetAdapter** to check the adapter was up and **Get-NetConnectionProfile** to check whether it was using the public profile. This was confirmed to be the issue.
+I used diagnostic tools ==ip a== and **ip route** to ensure the correct IP configurations were in place and checked VirtualBox settings to ensure the correct host-only adapter was configured on the server. I then checked the Windows host to ensure its firewall settings were not blocking ICMP traffic. In PowerShell I used **Get-NetAdapter** to check the adapter was up and **Get-NetConnectionProfile** to check whether it was using the public profile. This was confirmed to be the issue.
 
 I used the following command to allow ICMP traffic and successfully ping the adapter:
 
