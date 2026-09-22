@@ -1,7 +1,7 @@
 # Lab01: Setting up the network infrastructure
 
 ## Objective
-This lab is the start of a series in which I will built a secure, isolated sandbox network simulating a typical small digital newsroom. In this lab I will configure a host-only network in VirtualBox, starting with a server and a Linux client with static IP addresses. I will demonstrate that the devices can ping each other and that they are isolated from my home network.
+Welcome to the Old Millington Gazette. This is the first in a series of labs in which I am setting up a secure, isolated sandbox network environment. It will simulate a small digital newsroom, with editorial and sales departments and an IT administrator. In this lab I will configure a host-only network in VirtualBox, starting with a server and a Linux client with static IP addresses. I will demonstrate that the devices can ping each other and that they are isolated from my home network.
 
 ## Blueprint
 ```text
