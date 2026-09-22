@@ -1,11 +1,9 @@
 # homelab-portfolio
-I am a journalist and senior lecturer retraining in IT / Cyber / AI.
+Welcome to the *Old Millington Gazette*.
 
-I am building a virtual newsroom lab for the *Old Millington Gazette* with AD, DNS and DHCP for Network+ and Security+
+I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo charts my progress building a virtual newsroom network for a fictional community publisher. The news service requires editorial and sales teams on separate VLANs, all with access to a central server with shared resources, AD, DNS and DHCP. The isolated, self-contained network will be built with VMs on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using VirtualBox.
 
-The isolated, self-contained network will be built with VMs on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using VirtualBox.
-
-**Focus:** CompTIA Network+, Security+ and AWS Certified AI Practitioner
+**Purpose:** This lab is part of my preparation for CompTIA Network+, Security+ and AWS Certified AI Practitioner
 
 ## Network topology blueprint
 ```text
