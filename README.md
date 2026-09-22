@@ -33,7 +33,7 @@ The isolated, self-contained network will be built with VMs on a GEEKOM A8 (Ryze
 VirtualBox, Ubuntu Server, Linux Mint, Debian
 
 ### Labs
-- [ ] Lab 01 - [Two nodes, static IPs - OSI Layers 1-3](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab01%20Network%20setup.md)
+- [x] Lab 01 - [Two nodes, static IPs - OSI Layers 1-3](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab01%20Network%20setup.md)
 - [ ] Lab 02 - DHCP and DNS
 - [ ] Lab 03 - Segmentation - VLANs
 - [ ] Lab 04 - Directory services - authentication
