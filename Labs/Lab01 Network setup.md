@@ -62,7 +62,8 @@ To prove the virtual newsroom cannot leak malicious traffic into the home networ
 it-admin01@itadmin01> ping -c 3 192.168.1.254
 ping: connect: Network is unreachable
 ```
-* **Analysis:** The `Network is unreachable` error explicitly confirms that the VM has no routing path out of the VirtualBox private switch, proving absolute network isolation from the host LAN.
+
+**Analysis:** The `Network is unreachable` error explicitly confirms that the VM has no routing path out of the VirtualBox private switch, proving absolute network isolation from the host LAN.
 
 ### Verification 3: VirtualBox configuration overview
 <img width="1011" height="917" alt="Image" src="https://github.com/user-attachments/assets/b5fea189-3545-4990-b6a7-5ea351fde050" />
