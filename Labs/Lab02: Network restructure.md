@@ -8,19 +8,19 @@ My initial goal here was to add the rest of the machines to the *Old Millington 
 graph TB
     NAT["Internet<br/>(VirtualBox NAT)"]
     pfSense["pfSense Router/Firewall<br/>WAN: DHCP (10.0.2.15)<br/>newsroom-lanA: 192.168.10.1/24<br/>newsroom-lanB: 192.168.20.1/24<br/>Domain: omgnews.test"]
-    Mint["it-admin01 (Linux Mint)<br/>192.168.10.101<br/>Admin workstation / diagnostics"]
+    Mint1["it-admin01 (Linux Mint)<br/>192.168.10.101<br/>Admin workstation / diagnostics"]
     Ubuntu["newssrvr1 (Ubuntu Server) — PENDING<br/>Planned: 192.168.10.10<br/>Role: DNS"]
-    Mint["newsroom-client01 (Linux Mint) — PENDING<br/>Planned: 192.168.20.0/24 (DHCP)<br/>Role: End-user client"]
+    Mint2["newsroom-client01 (Linux Mint) — PENDING<br/>Planned: 192.168.20.0/24 (DHCP)<br/>Role: End-user client"]
 
     NAT --> pfSense
-    pfSense -->|newsroom-lanA| Mint
+    pfSense -->|newsroom-lanA| Mint1
     pfSense -.->|newsroom-lanA planned| Ubuntu
-    pfSense -.->|newsroom-lanB planned| Mint
+    pfSense -.->|newsroom-lanB planned| Mint2
 
     classDef live fill:#d4edda,stroke:#28a745,color:#000;
     classDef pending fill:#f8f9fa,stroke:#adb5bd,stroke-dasharray: 5 5,color:#666;
-    class NAT,pfSense,Mint live;
-    class Ubuntu,Mint pending;
+    class NAT,pfSense,Mint1 live;
+    class Ubuntu,Mint2 pending;
 ```
 
 ---
