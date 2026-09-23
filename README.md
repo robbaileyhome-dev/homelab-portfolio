@@ -5,7 +5,7 @@ I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo ch
 
 **Purpose:** This lab is part of my preparation for CompTIA Network+, Security+ and AWS Certified AI Practitioner
 
-## Network topology blueprint
+## Network topology blueprint v1.0
 ```text
                            [ VirtualBox NAT / Host-Only Network ]
                                  The Old Millington Gazette
