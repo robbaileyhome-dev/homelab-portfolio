@@ -4,6 +4,7 @@
 Day one for the *Old Millington Gazette*. This is the first in a series of labs in which I am setting up a secure, isolated sandbox network environment. It will simulate a small digital newsroom, with editorial and sales departments and an IT administrator. In this lab I will configure an isolated NAT network in VirtualBox, starting with a server and a Linux client with static IP addresses. I will demonstrate that the devices can ping each other and that they are isolated from my home network.
 
 ## Blueprint
+``` mermaid
 flowchart TD
     subgraph NET["VirtualBox Network: The Old Millington Gazette | Subnet range: 192.168.0.0/24"]
         direction TB
@@ -13,8 +14,6 @@ flowchart TD
 
         SRV --> ED
     end
-
-
 ---
 
 ## Evidence of connectivity & isolation
