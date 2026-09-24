@@ -29,7 +29,7 @@ VirtualBox, Ubuntu Server, Linux Mint, Debian
 
 ### Labs
 - [x] Lab 01 - [Two nodes, static IPs - OSI Layers 1-3](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab01%20Network%20setup.md)
-- [ ] Lab 02 - DHCP and DNS
+- [x] Lab 02 - [Network restructure; DHCP and DNS](https://github.com/robbaileyhome-dev/homelab-portfolio/blob/main/Labs/Lab02%3A%20Network%20restructure.md)
 - [ ] Lab 03 - Segmentation - VLANs
 - [ ] Lab 04 - Directory services - authentication
 - [ ] Lab 05 - File / print - shared resources
