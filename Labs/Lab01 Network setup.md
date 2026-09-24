@@ -11,10 +11,16 @@ flowchart TD
         SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS"]
 
         ED["<b>Linux client</b><br/>editor-01"]
+        REP["<b>Linux client</b><br/>reporter-01"]
+        IT["<b>Linux client</b><br/>it-admin-01"]
+        SALES["<b>Linux client</b><br/>sales-01"]
 
         SRV --> ED
+        SRV --> REP
+        SRV --> IT
+        SRV --> SALES
     end
----
+
 
 ## Evidence of connectivity & isolation
 
