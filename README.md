@@ -3,7 +3,7 @@ Welcome to the *Old Millington Gazette*.
 
 I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo charts my progress building a virtual newsroom network for a fictional community publisher. The news service requires editorial and sales teams on separate VLANs, all with access to a central server with shared resources, AD, DNS and DHCP. The isolated, self-contained network will be built with VMs on a GEEKOM A8 (Ryzen 7 8745HS, 16GB) using VirtualBox.
 
-**Purpose:** This lab is part of my preparation for CompTIA Network+, Security+ and AWS Certified AI Practitioner
+**Purpose:** This lab is part of my preparation for the CompTIA Network+, Security+ and AWS Certified AI Practitioner exams.
 
 ## Network topology blueprint v1.0
 ```mermaid
