@@ -112,5 +112,10 @@ Address:    2a00:1450:4009:c13::65
 
 <img width="1149" height="299" alt="Image" src="https://github.com/user-attachments/assets/b5e9b674-c8b7-4a02-bce3-5b101f65001c" />
 
-### Troubleshooting 
-to come
+---
+
+## Troubleshooting 
+
+**Installer:** The Netgate Installer ISO for pfSense is a network-bootstrapping installer not a self-contained image. During installation I found myself caught in a loop back to interface assignment because the installer could not download necessary files. **Lesson:** Check ISO variant before installing. **Solution:** Ensured the pfSense VM had network adapter 1 was assigned to NAT for internet connectivity during installation.
+
+**Diagnostic process:** I had several issues with connectivity during setup and learned to diagnose in a strict order -> interface/IP settings (ip a) -> connectivity (ping) -> routing out via NAT (ping to external IP) -> DNS resolution (nslookup) -> firewall settings (public/private which may block ICMP traffic) 
