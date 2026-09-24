@@ -6,25 +6,22 @@ I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo ch
 **Purpose:** This lab is part of my preparation for CompTIA Network+, Security+ and AWS Certified AI Practitioner
 
 ## Network topology blueprint v1.0
-```text
-                           [ VirtualBox NAT / Host-Only Network ]
-                                 The Old Millington Gazette
-                                Subnet range: 192.168.0.0/24
-                           +------------------------------------+
-                           |           Ubuntu server            |
-                           |     Gateway, Domain, DHCP, DNS     |
-                           |          IP: 192.168.0.10          |
-                           +------------------------------------+
-                                               |
-           +-----------------------+----------------------+-----------------------+
-           |                       |                      |                       |
-           v                       v                      v                       v
-+---------------------+ +---------------------+ +---------------------+ +---------------------+
-|  Linux client       | |  Linux client       | |  Linux client       | |  Linux client       |
-|  editor-01          | |  reporter-01        | |  it-admin-01        | |  sales-01           |
-|  1GB, 1 core        | |  1GB, 1 core        | |  2GB, 1 core        | |  1GB, 1 core        |
-|  IP: 192.168.0.150  | |  IP: 192.168.0.151  | |  IP: 192.168.0.101  | |  IP: 192.168.0.200  |
-+---------------------+ +---------------------+ +---------------------+ +---------------------+
+```mermaid
+flowchart TD
+    subgraph NET["VirtualBox NAT / Host-Only Network<br/>The Old Millington Gazette<br/>Subnet range: 192.168.0.0/24"]
+        direction TB
+        SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS<br/>IP: 192.168.0.10"]
+
+        ED["<b>Linux client</b><br/>editor-01<br/>1GB, 1 core<br/>IP: 192.168.0.150"]
+        REP["<b>Linux client</b><br/>reporter-01<br/>1GB, 1 core<br/>IP: 192.168.0.151"]
+        IT["<b>Linux client</b><br/>it-admin-01<br/>2GB, 1 core<br/>IP: 192.168.0.101"]
+        SALES["<b>Linux client</b><br/>sales-01<br/>1GB, 1 core<br/>IP: 192.168.0.200"]
+
+        SRV --> ED
+        SRV --> REP
+        SRV --> IT
+        SRV --> SALES
+    end
 ```
 
 ### Tools
