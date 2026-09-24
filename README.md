@@ -10,12 +10,12 @@ I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo ch
 flowchart TD
     subgraph NET["VirtualBox NAT / Host-Only Network<br/>The Old Millington Gazette<br/>Subnet range: 192.168.0.0/24"]
         direction TB
-        SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS<br/>IP: 192.168.0.10"]
+        SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS"]
 
-        ED["<b>Linux client</b><br/>editor-01<br/>1GB, 1 core<br/>IP: 192.168.0.150"]
-        REP["<b>Linux client</b><br/>reporter-01<br/>1GB, 1 core<br/>IP: 192.168.0.151"]
-        IT["<b>Linux client</b><br/>it-admin-01<br/>2GB, 1 core<br/>IP: 192.168.0.101"]
-        SALES["<b>Linux client</b><br/>sales-01<br/>1GB, 1 core<br/>IP: 192.168.0.200"]
+        ED["<b>Linux client</b><br/>editor-01<br/>1GB, 1 core"]
+        REP["<b>Linux client</b><br/>reporter-01<br/>1GB, 1 core"]
+        IT["<b>Linux client</b><br/>it-admin-01<br/>2GB, 1 core"]
+        SALES["<b>Linux client</b><br/>sales-01<br/>1GB, 1 core"]
 
         SRV --> ED
         SRV --> REP
