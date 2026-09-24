@@ -8,7 +8,7 @@ I'm a journalist and senior lecturer retraining in IT / Cyber / AI. This repo ch
 ## Network topology blueprint v1.0
 ```mermaid
 flowchart TD
-    subgraph NET["VirtualBox NAT / Host-Only Network<br/>The Old Millington Gazette<br/>Subnet range: 192.168.0.0/24"]
+    subgraph NET["VirtualBox Network: The Old Millington Gazette<br/>Subnet range: 192.168.0.0/24"]
         direction TB
         SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS"]
 
