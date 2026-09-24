@@ -20,6 +20,7 @@ flowchart TD
         SRV --> IT
         SRV --> SALES
     end
+```
 
 
 ## Evidence of connectivity & isolation
