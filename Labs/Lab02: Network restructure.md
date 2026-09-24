@@ -9,7 +9,7 @@ graph TB
     NAT["Internet<br/>(VirtualBox NAT)"]
     pfSense["pfSense Router/Firewall<br/>WAN: DHCP (10.0.2.15)<br/>newsroom-lanA: 192.168.10.1/24<br/>newsroom-lanB: 192.168.20.1/24<br/>Domain: omgnews.test"]
     Mint1["it-admin01 (Linux Mint)<br/>192.168.10.101<br/>Admin workstation / diagnostics"]
-    Rocky["omgnewssrvr1 (Rocky Linux) — PENDING<br/>Planned: 192.168.10.10<br/>Role: DNS"]
+    Rocky["omgnewssrvr01 (Rocky Linux) — PENDING<br/>Planned: 192.168.10.10<br/>Role: DNS"]
     Mint2["omgnews-ed01 (Linux Mint) — PENDING<br/>Planned: 192.168.20.0/24 (DHCP)<br/>Role: End-user client"]
 
     NAT --> pfSense
