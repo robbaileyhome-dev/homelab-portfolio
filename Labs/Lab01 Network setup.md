@@ -4,25 +4,16 @@
 Day one for the *Old Millington Gazette*. This is the first in a series of labs in which I am setting up a secure, isolated sandbox network environment. It will simulate a small digital newsroom, with editorial and sales departments and an IT administrator. In this lab I will configure an isolated NAT network in VirtualBox, starting with a server and a Linux client with static IP addresses. I will demonstrate that the devices can ping each other and that they are isolated from my home network.
 
 ## Blueprint
-```text
-   [ VirtualBox Host-Only Network ]
-      The Old Millington Gazette
-     Subnet range: 192.168.0.0/24
-+------------------------------------+
-|           Ubuntu server            |
-|             newssrvr01             |
-|     Gateway, Domain, DHCP, DNS     |
-|          IP: 192.168.0.10          |
-+------------------------------------+
-                   |
-                   v 
-        +---------------------+
-        |  Linux Mint client  |
-        |  it-admin01         |
-        |  2GB, 2 cores       |
-        |  IP: 192.168.0.101  |
-        +---------------------+
-```
+flowchart TD
+    subgraph NET["VirtualBox Network: The Old Millington Gazette | Subnet range: 192.168.0.0/24"]
+        direction TB
+        SRV["<b>Ubuntu server</b><br/>Gateway, Domain, DHCP, DNS"]
+
+        ED["<b>Linux client</b><br/>editor-01"]
+
+        SRV --> ED
+    end
+
 
 ---
 
